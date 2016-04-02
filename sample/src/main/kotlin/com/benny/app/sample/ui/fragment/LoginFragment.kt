@@ -74,7 +74,7 @@ class LoginFragment : BaseFragment(), LoginViewModel.LoginDelegate {
             }
         }
 
-        override fun builder(): AnkoContext<*>.() -> Unit = {
+        override fun builder(): AnkoContext<LoginFragment>.() -> Unit = {
             verticalLayout {
                 val tvStyle = viewStyle<TextView> {
                     textSizeDimen = R.dimen.font_38

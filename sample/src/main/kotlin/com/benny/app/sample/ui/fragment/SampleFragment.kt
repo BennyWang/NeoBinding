@@ -22,7 +22,7 @@ class SampleFragment : BaseFragment() {
     }
 
     class SampleFragmentUI() : ViewBinderComponent<Fragment> {
-        override fun builder(): AnkoContext<*>.() -> Unit = {
+        override fun builder(): AnkoContext<Fragment>.() -> Unit = {
             verticalLayout {
             }
         }

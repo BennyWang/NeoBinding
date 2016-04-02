@@ -1,7 +1,7 @@
 package com.benny.app.sample.ui.layout.item
 
-import android.graphics.Color
 import android.view.Gravity
+import android.view.ViewGroup
 import com.benny.app.sample.ui.extension.progressBar
 import com.benny.library.kbinding.adapterview.viewcreator.ItemViewBinderComponent
 import org.jetbrains.anko.*
@@ -11,7 +11,7 @@ import org.jetbrains.anko.*
  */
 
 class LoadingItemView : ItemViewBinderComponent {
-    override fun builder(): AnkoContext<*>.() -> Unit = {
+    override fun builder(): AnkoContext<ViewGroup>.() -> Unit = {
         relativeLayout {
             frameLayout {
                 progressBar (android.R.attr.progressBarStyleSmall) {
