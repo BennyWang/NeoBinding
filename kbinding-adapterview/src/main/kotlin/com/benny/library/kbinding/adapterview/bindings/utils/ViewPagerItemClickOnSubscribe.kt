@@ -3,10 +3,10 @@ package com.benny.library.kbinding.adapterview.bindings.utils
 import android.support.v4.view.ViewPager
 import android.widget.AdapterView
 import com.benny.library.kbinding.adapterview.bindings.setOnItemClickListener
-import com.jakewharton.rxbinding.internal.MainThreadSubscription
 import com.jakewharton.rxbinding.internal.Preconditions
 import rx.Observable
 import rx.Subscriber
+import rx.android.MainThreadSubscription
 
 /**
  * Created by benny on 2/3/16.

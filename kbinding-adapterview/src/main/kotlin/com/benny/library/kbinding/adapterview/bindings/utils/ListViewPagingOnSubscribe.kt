@@ -3,9 +3,9 @@ package com.benny.library.kbinding.adapterview.bindings.utils
 import android.widget.ListView
 import com.benny.library.autoadapter.listener.AdapterPagingListener
 import com.benny.library.kbinding.adapterview.bindings.setPagingListener
-import com.jakewharton.rxbinding.internal.MainThreadSubscription
 import rx.Observable
 import rx.Subscriber
+import rx.android.MainThreadSubscription
 
 /**
  * Created by benny on 12/26/15.

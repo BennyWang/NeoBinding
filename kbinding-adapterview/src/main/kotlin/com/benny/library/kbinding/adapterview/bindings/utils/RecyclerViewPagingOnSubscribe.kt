@@ -1,14 +1,14 @@
 package com.benny.library.kbinding.adapterview.bindings.utils
 
-import rx.Observable
-import rx.Subscriber
-import java.util.*
 import android.support.v7.widget.RecyclerView
-import com.jakewharton.rxbinding.internal.MainThreadSubscription
-import com.benny.library.kbinding.adapterview.bindings.PAGING_LISTENER
-import com.benny.library.kbinding.adapterview.bindings.setPagingListener
 import com.benny.library.autoadapter.listener.AdapterPagingCompleteListener
 import com.benny.library.autoadapter.listener.AdapterPagingListener
+import com.benny.library.kbinding.adapterview.bindings.PAGING_LISTENER
+import com.benny.library.kbinding.adapterview.bindings.setPagingListener
+import rx.Observable
+import rx.Subscriber
+import rx.android.MainThreadSubscription
+import java.util.*
 
 /**
  * Created by benny on 12/26/15.
