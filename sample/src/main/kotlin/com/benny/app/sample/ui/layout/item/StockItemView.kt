@@ -6,12 +6,14 @@ import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.text.TextUtils
 import android.view.Gravity
+import android.view.ViewGroup
 import com.benny.app.sample.R
 import com.benny.app.sample.converter.StockColorConverter
 import com.benny.app.sample.converter.StockPriceChangePercentageConverter
 import com.benny.app.sample.converter.StockPriceConverter
 import com.benny.app.sample.network.service.caishuo.model.Stock
 import com.benny.app.sample.utils.generateViewId
+import com.benny.library.kbinding.adapterview.viewcreator.ItemViewBinderComponent
 import com.benny.library.kbinding.common.bindings.background
 import com.benny.library.kbinding.common.bindings.text
 import com.benny.library.kbinding.common.bindings.textColorResource
@@ -21,7 +23,6 @@ import com.benny.library.kbinding.converter.OneWayConverter
 import com.benny.library.kbinding.dsl.OneWay
 import com.benny.library.kbinding.dsl.bind
 import com.benny.library.kbinding.dsl.resolveAttribute
-import com.benny.library.kbinding.adapterview.viewcreator.ItemViewBinderComponent
 import org.jetbrains.anko.*
 
 /**
@@ -56,7 +57,7 @@ class StockItemView : ItemViewBinderComponent {
         }
     }
 
-    override fun builder(): AnkoContext<*>.() -> Unit = {
+    override fun builder(): AnkoContext<ViewGroup>.() -> Unit = {
         relativeLayout {
             backgroundResource = resolveAttribute(android.R.attr.selectableItemBackground)
             verticalLayout {

@@ -17,11 +17,11 @@ import com.benny.app.sample.ui.widget.ViewPagerIndicator
 import com.benny.app.sample.utils.generateViewId
 import com.benny.library.autoadapter.IPagerAdapterItemAccessor
 import com.benny.library.autoadapter.SimpleAdapterItemAccessor
+import com.benny.library.kbinding.adapterview.bindings.fragmentAdapter
+import com.benny.library.kbinding.adapterview.converter.ListToFragmentPagerAdapterConverter
 import com.benny.library.kbinding.annotation.Property
 import com.benny.library.kbinding.dsl.bind
 import com.benny.library.kbinding.dsl.inflate
-import com.benny.library.kbinding.adapterview.bindings.fragmentAdapter
-import com.benny.library.kbinding.adapterview.converter.ListToFragmentPagerAdapterConverter
 import com.benny.library.kbinding.view.ViewBinderComponent
 import com.benny.library.kbinding.view.setContentView
 import org.jetbrains.anko.*
@@ -66,14 +66,14 @@ class MainActivity : BaseActivity() {
     }
 
     inner class MainActivityUI : ViewBinderComponent<MainActivity> {
-        override fun builder(): AnkoContext<*>.() -> Unit = {
+        override fun builder(): AnkoContext<MainActivity>.() -> Unit = {
             verticalLayout {
                 appBarLayout {
                     toolBar = inflate(TitleToolBarView(ctx.resources.getString(R.string.home)), this@appBarLayout) as Toolbar
                 }
                 val pager = viewPager {
                     id = generateViewId()
-                    bind { fragmentAdapter("fragments", converter = ListToFragmentPagerAdapterConverter((owner as MainActivity).supportFragmentManager, { PagerAdapterAccessor(it) })) }
+                    bind { fragmentAdapter("fragments", converter = ListToFragmentPagerAdapterConverter(owner.supportFragmentManager, { PagerAdapterAccessor(it) })) }
                 }.lparams(matchParent, 0, 1f)
 
                 viewPagerIndicator {

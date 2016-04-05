@@ -3,8 +3,10 @@ package com.benny.app.sample.ui.layout.item
 import android.graphics.Typeface
 import android.text.TextUtils
 import android.view.Gravity
+import android.view.ViewGroup
 import com.benny.app.sample.R
 import com.benny.app.sample.ui.extension.simpleDraweeView
+import com.benny.library.kbinding.adapterview.viewcreator.ItemViewBinderComponent
 import com.benny.library.kbinding.common.bindings.src
 import com.benny.library.kbinding.common.bindings.text
 import com.benny.library.kbinding.common.bindings.textWeight
@@ -12,7 +14,6 @@ import com.benny.library.kbinding.converter.StringConverter
 import com.benny.library.kbinding.dsl.OneWay
 import com.benny.library.kbinding.dsl.bind
 import com.benny.library.kbinding.dsl.resolveAttribute
-import com.benny.library.kbinding.adapterview.viewcreator.ItemViewBinderComponent
 import org.jetbrains.anko.*
 
 /**
@@ -20,7 +21,7 @@ import org.jetbrains.anko.*
  */
 
 class MovieItemView : ItemViewBinderComponent {
-    override fun builder(): AnkoContext<*>.() -> Unit = {
+    override fun builder(): AnkoContext<ViewGroup>.() -> Unit = {
         relativeLayout {
             backgroundResource = resolveAttribute(android.R.attr.selectableItemBackground)
             linearLayout {

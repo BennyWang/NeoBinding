@@ -46,19 +46,19 @@ class StockDetailsActivity : BaseActivity() {
 
 
     class StockDetailsActivityUI : ViewBinderComponent<StockDetailsActivity> {
-        override fun builder(): AnkoContext<*>.() -> Unit = {
+        override fun builder(): AnkoContext<StockDetailsActivity>.() -> Unit = {
             verticalLayout {
-                (owner as StockDetailsActivity).toolBar = toolbar {
+                owner.toolBar = toolbar {
                     backgroundColor = Color.parseColor("#393a4c")
                 }
                 frameLayout {
                     relativeLayout {
-                        wait { until("stock") { inflate(StockInfoUI(), this@relativeLayout).lparams(matchParent) } }
+                        wait { until("data") { inflate(StockInfoUI(), this@relativeLayout).lparams(matchParent) } }
                     }
                     frameLayout {
                         backgroundColor = Color.WHITE
                         progressBar(android.R.attr.progressBarStyleSmall).lparams { gravity = Gravity.CENTER }
-                        wait { until("stock") { fadeOut() } }
+                        wait { until("data") { fadeOut() } }
                     }
                 }.lparams(matchParent, matchParent)
             }

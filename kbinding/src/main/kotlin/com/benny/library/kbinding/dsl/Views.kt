@@ -25,15 +25,15 @@ inline fun <T> AnkoContext<T>.bindableLayout(init: BindableLayout<T>.() -> Unit)
 }
 
 inline fun AnkoContext<*>.bind(propertyBindingFactory: () -> PropertyBinding): Unit {
-    if(this is BindableLayout<*>) bindingAssembler.addBinding(propertyBindingFactory())
+    if (this is BindableLayout<*>) bindingAssembler.addBinding(propertyBindingFactory())
 }
 
 inline fun AnkoContext<*>.wait(propertyBindingFactory: () -> PropertyBinding): Unit {
     bind(propertyBindingFactory)
 }
 
-fun <T> AnkoContext<T>.inflate(viewComponent: ViewComponent, parent: ViewGroup, prefix: String = "") : View = when(this) {
-    is BindableLayout<*> -> {
+fun <T> AnkoContext<T>.inflate(viewComponent: ViewComponent<T>, parent: ViewGroup, prefix: String = ""): View = when (this) {
+    is BindableLayout<T> -> {
         inflate(viewComponent, parent, prefix)
     }
     else -> {
