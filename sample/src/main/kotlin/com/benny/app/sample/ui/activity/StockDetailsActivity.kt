@@ -53,12 +53,12 @@ class StockDetailsActivity : BaseActivity() {
                 }
                 frameLayout {
                     relativeLayout {
-                        wait { until("stock") { inflate(StockInfoUI(), this@relativeLayout).lparams(matchParent) } }
+                        wait { until("data") { inflate(StockInfoUI(), this@relativeLayout).lparams(matchParent) } }
                     }
                     frameLayout {
                         backgroundColor = Color.WHITE
                         progressBar(android.R.attr.progressBarStyleSmall).lparams { gravity = Gravity.CENTER }
-                        wait { until("stock") { fadeOut() } }
+                        wait { until("data") { fadeOut() } }
                     }
                 }.lparams(matchParent, matchParent)
             }

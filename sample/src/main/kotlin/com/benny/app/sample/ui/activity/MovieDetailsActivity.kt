@@ -107,7 +107,7 @@ class MovieDetailsActivity : BaseActivity() {
                     frameLayout {
                         backgroundColor = Color.WHITE
                         progressBar(android.R.attr.progressBarStyleSmall).lparams { gravity = Gravity.CENTER }
-                        wait { until("movie") { fadeOut() } }
+                        wait { until("data") { fadeOut() } }
                     }
                 }.lparams(matchParent, matchParent)
             }
